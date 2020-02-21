@@ -10,28 +10,29 @@ turtle.speed(5)
 # 10x for visibilty
 
 # for drafting/universal
-north = 90
-south = 270
-west = 180
-east = 0
-
-cm = 10
-two_cm = 20
-an_inch = 25
-waistline = 0
+contants_dict = { 'north' : 90,
+'south' : 270,
+'west' : 180,
+'east' : 0,
+'cm' : 10,
+'two_cm' : 20,
+'an_inch' : 25,
+'waistline' : 0,
+}
 
 # measurements from a person
 
-nape_to_waist = 360
-armhole_height = 180
-full_bust = 1000
-waist_cir = 740
-bust_height = 185
-neck_cir = 380
-shoulder_len = 120
+your_sloper_dict = { 'nape_to_waist': 360,
+'armhole_height' : 180,
+'full_bust': 1000,
+'waist_cir' : 740,
+'bust_height' : 185,
+'neck_cir' : 380,
+'shoulder_len' : 120,
+'front_width' : 670,
+'back_width' : 510,
+    }
 
-front_width = 670
-back_width = 510
 
 # dart math
 
@@ -65,12 +66,13 @@ def make_bodice_box(full_bust):
     # top_right corner
     turtle.up()
 
-    turtle.goto((-box_len), (nape_to_waist + cm))
+    turtle.goto((-box_len), (your_sloper_dict.get('nape_to_waist') + contants_dict.get('cm'))
     back_line_top = turtle.pos()
 
     turtle.down()
 
-    # top_left corner
+"""
+ # top_left corner
 
     turtle.goto(box_len, (nape_to_waist + cm))
     front_line_top = turtle.pos()
@@ -431,5 +433,7 @@ def make_bodice_box(full_bust):
 horizontal_guide(bust_height, (full_bust / 2))
 make_bodice_box(full_bust)
 
-turtle.done()
 
+
+"""
+turtle.done()
